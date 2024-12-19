@@ -1,0 +1,21 @@
+[GLOBAL]
+pants_version = "2.23.0"
+
+backend_packages = [
+    "pants.backend.experimental.go",
+    "pants_backend_oci"
+]
+
+plugins = [
+  "pants_backend_oci @ git+https://github.com/tgolsson/pants-backends@1c49594919b62ce418d864564d0a84e31c927dfb#egg=pants_backend_oci&subdirectory=pants-plugins/oci"
+]
+
+[oci]
+unsafe_tar_ignore_file_changed = true
+
+# For oci backend
+[umoci]
+version = "nightly"
+
+[environments-preview.names]
+golang = "//:golang"
